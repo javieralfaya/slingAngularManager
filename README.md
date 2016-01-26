@@ -1,6 +1,6 @@
 # slingAngularManager
 
-Demo App for test ApacheSling  with: AngularJs and BootStrap
+Application for testing ApacheSling  with: AngularJs and BootStrap
 
 - The application is tested with ApacheSling StandAlone: org.apache.sling.launchpad-8.jar and document store in MongoDB
 
