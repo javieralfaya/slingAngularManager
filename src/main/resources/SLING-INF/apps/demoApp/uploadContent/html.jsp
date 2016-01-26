@@ -1,43 +1,51 @@
 <%@taglib prefix="sling" uri="http://sling.apache.org/taglibs/sling/1.0" %>
 <sling:defineObjects/>
 
-
 <div class="jumbotron" >
-	<div class="container">
-		
+	<div class="container">		
 		<form  ng-app="slingManager" ng-controller="slingManagerUploadContentCtrl" class="text-center" action="/content/demoApp/repositorio" method="post" enctype="multipart/form-data">
-
-<!-- 			    <label class="control-label">Seleccionar fichero</label>
-			    <input id="input-6"  name="*"  placeholder="Fichero/s" type="file" multiple class="file-loading" ng-file-select="onFileSelect($files)">
-				<input name=":redirect" value="/demoApp/demoApp.html#/uploadContent" type="hidden"/>
-				<input type="hidden" name="*@TypeHint" value="nt:file" />
-				<button type="submit" class="btn btn-default">Submit</button>
-		
-		<input type="file" ng-file-select="onFileSelect($files)" ng-model="files"/>
-		<button ng-click="uploadFiles($files)" type="button" class="btn btn-default glyphicon glyphicon-upload"> Upload</button>
-		<div class="button" ngf-select ng-model="files" ngf-multiple="true">Select</div> -->
-		
-		
-		<!-- <button ngf-select="uploadFiles($files)" multiple 
-	            accept="image/*">Select Files</button>
-	    <br> -->
-	    
-	    <input id="controlFiles"  name="*"  multiple placeholder="Fichero/s" type="file" multiple class="file-loading" ngf-select="populateFiles($files)"/>	   
-	    <!-- <input type="hidden" name="*@TypeHint" value="nt:file" /> -->
-	   <!--  <button type="submit" class="btn btn-default">Submit</button> -->
-	   
-	    <button ng-show='files.length > 0' ng-click="uploadAllFilesByForm()" type="button" class="btn btn-default glyphicon glyphicon-upload"> Upload</button>
-	    
-<!-- 	        <br>Files:
-	    <ul>
-	        <li ng-repeat="f in files" style="font:smaller">
-	            {{f.name}}
-	        </li>
-    	</ul> -->
-		</form>
-	
-	 </div>
- </div>
+		    <input id="controlFiles"  name="*"  multiple placeholder="Fichero/s" type="file" multiple class="file-loading" ngf-select="populateFiles($files)"/>	   
+<!-- 			<button ng-show='files.length > 0' 
+			ng-click="uploadAllFilesByForm()" 
+			type="button" 
+			class="btn btn-default glyphicon glyphicon-upload"
+			data-toggle="modal">
+					 Upload
+			</button> -->
+			
+			<a ng-show='files.length > 0' ng-click="uploadAllFilesByForm()"  role="button" class="btn btn-primary glyphicon glyphicon-upload" data-toggle="modal">Upload files</a>
+			
+				<!-- <br>Files uploaded in last request:
+			    <ul>
+			        <li ng-repeat="f in files">
+			            {{f.name}}
+			        </li>
+		    	</ul> -->
+		    	
+		    	<!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						        <h4 class="modal-title" id="myModalLabel">Please wait uploading content</h4>
+						      </div>
+						      <div class="modal-body center-block">
+						        <div class="progress">
+						          <div class="progress-bar bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+						            
+						          </div>
+						        </div>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						      </div>
+						    </div><!-- /.modal-content -->
+						  </div><!-- /.modal-dialog -->
+						</div><!-- /.modal -->
+						
+						
+		</form>	
+	</div>
+</div>
  
- 
-</body>

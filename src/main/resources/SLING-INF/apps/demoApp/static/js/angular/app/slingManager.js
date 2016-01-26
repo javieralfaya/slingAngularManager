@@ -30,13 +30,13 @@ app.config(['$routeProvider', function ($routeProvider) {
 /*Controller para el manejo de subidas de ficheros*/
 
 app.controller('slingManagerUploadContentCtrl', function($scope, Upload, $log, $http, $window, $sanitize, AuthenticationService) {
+	$scope.actualPage='Upload content';
 	var files;
 	$scope.files = files;
-
-	
 	AuthenticationService.ClearCredentials();
 	$scope.username='admin';
 	$scope.password='admin';
+	
 	
     $scope.login = function () {
         $scope.dataLoading = true;
@@ -92,7 +92,7 @@ app.controller('slingManagerUploadContentCtrl', function($scope, Upload, $log, $
 	     };
 	     
 	     $scope.uploadAllFilesByForm = function(){
-	    	
+	    	 $('#myModal').modal() ;
 	    	  var formElement = document.forms[0];
 	    	  var fd = new FormData(formElement);
 	          var uploadUrl = '/content/demoApp/repositorio';

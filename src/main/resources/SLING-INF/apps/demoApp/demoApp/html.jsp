@@ -23,8 +23,10 @@
 <body ng-app="slingManager">
 
 	<div ng-include='"${pageContext.request.contextPath}/apps/demoApp/abstract/menu.html"'></div>
+	
+
 	<div>
-   		You are in: <code>Page</code>
+   		You're in: <code>{{$scope.actualPage}}</code>
 	</div>
 	<div ng-view>
 		<div ng-include='"${pageContext.request.contextPath}/apps/demoApp/demoApp/homeContent.html"'></div>
