@@ -1,0 +1,6 @@
+{
+	  "jcr:title" : "DemoApp",
+	  "title" : "DemoApp",
+	  "sling:resourceSuperType" : "demoApp:abstract",
+      "sling:resourceType" : "demoApp:demoApp"
+}

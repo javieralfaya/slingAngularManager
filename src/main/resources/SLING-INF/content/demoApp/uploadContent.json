@@ -1,0 +1,6 @@
+{
+	  "jcr:title" : "uploadContent",
+	  "title" : "uploadContent",
+	  "sling:resourceSuperType" : "demoApp:abstract",
+      "sling:resourceType" : "demoApp:uploadContent"
+}
