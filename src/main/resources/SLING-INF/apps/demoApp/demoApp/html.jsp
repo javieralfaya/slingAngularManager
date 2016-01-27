@@ -28,7 +28,10 @@
 	<div>
    		You're in: <code>{{actualPage}}</code>
 	</div>
-	<div ui-view></div>
+	<div ui-view>
+	      <div ng-include='"${pageContext.request.contextPath}/apps/demoApp/demoApp/homeContent.html"'></div>
+	
+	</div>
 <%-- 	<div ng-view>
 		<div ng-include='"${pageContext.request.contextPath}/apps/demoApp/demoApp/homeContent.html"'></div>
 	<div> --%>
