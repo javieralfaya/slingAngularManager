@@ -26,11 +26,12 @@
 	
 
 	<div>
-   		You're in: <code>{{$scope.actualPage}}</code>
+   		You're in: <code>{{actualPage}}</code>
 	</div>
-	<div ng-view>
+	<div ui-view></div>
+<%-- 	<div ng-view>
 		<div ng-include='"${pageContext.request.contextPath}/apps/demoApp/demoApp/homeContent.html"'></div>
-	<div>
+	<div> --%>
 
 	<div ng-include='"${pageContext.request.contextPath}/apps/demoApp/abstract/footer.html"'></div>
 
@@ -43,6 +44,8 @@
 		<script src="${pageContext.request.contextPath}/apps/demoApp/static/js/angular/angular-sanitize.min.js"></script>
 			
 		<script src="${pageContext.request.contextPath}/apps/demoApp/static/js/angular/angular-cookies.min.js"></script>
+		
+		<script src="${pageContext.request.contextPath}/apps/demoApp/static/js/angular/plugins/ui-router/angular-ui-router.min.js"></script>
 
 	<!--jquery-->
 

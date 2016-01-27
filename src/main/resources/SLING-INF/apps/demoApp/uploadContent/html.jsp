@@ -4,6 +4,9 @@
 <div class="jumbotron" >
 	<div class="container">		
 		<form  ng-app="slingManager" ng-controller="slingManagerUploadContentCtrl" class="text-center" action="/content/demoApp/repositorio" method="post" enctype="multipart/form-data">
+		   
+		     <code>Your operations will be done with: {{username}}</code>
+		   
 		    <input id="controlFiles"  name="*"  multiple placeholder="Fichero/s" type="file" multiple class="file-loading" ngf-select="populateFiles($files)"/>	   
 <!-- 			<button ng-show='files.length > 0' 
 			ng-click="uploadAllFilesByForm()" 

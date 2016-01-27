@@ -5,13 +5,39 @@
 // declare modules
 //angular.module('Authentication', []);
 
-var app = angular.module("slingManager", ['ngRoute','ngFileUpload','ngSanitize','ngCookies','Authentication']);
+
+
+var app = angular.module("slingManager", ['ngRoute','ngFileUpload','ngSanitize','ngCookies','Authentication','ui.router']);
+
+
+app.config(function($stateProvider, $urlRouterProvider) {
+	  $urlRouterProvider.otherwise("/inicio");
+	  $stateProvider
+	    .state('inicio', {
+		      url: "/",
+		      templateUrl: "/apps/demoApp/demoApp/homeContent.html",
+		      controller:'slingManagerCtrl'
+		    })
+	    .state('home', {
+	      url: "/home",
+	      templateUrl: "/apps/demoApp/demoApp/homeContent.html",
+	      controller:'slingManagerCtrl'
+	    })
+	    .state('listContent', {
+	      url: "/listContent",
+	      templateUrl: "/demoApp/listContent.html"
+	    })
+	    .state('uploadContent', {
+	      url: "/uploadContent",
+	      templateUrl: "/demoApp/uploadContent.html"
+	    });
+	});
 
 
 
 /**
  * Configura la rutas de apliación para renderizar vistas 
- */
+ 
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     // Home
@@ -23,6 +49,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     // else 404
     //.otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
 }]);
+*/
 
 
 
@@ -30,6 +57,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 /*Controller para el manejo de subidas de ficheros*/
 
 app.controller('slingManagerUploadContentCtrl', function($scope, Upload, $log, $http, $window, $sanitize, AuthenticationService) {
+
 	$scope.actualPage='Upload content';
 	var files;
 	$scope.files = files;
